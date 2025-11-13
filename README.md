@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kiran Consulting Portfolio
 
-## Getting Started
+A polished, single-page Next.js site designed to position Kiran as a Unity and game engineering consultant. The page highlights core services, a free one-hour audit offering, credibility markers, testimonials, and multiple contact pathways while keeping the messaging discreet about current employment.
 
-First, run the development server:
+## ✨ Highlights
+- Senior-level value proposition in a conversion-focused hero section.
+- Modular sections for services, free audit flow, experience timeline, testimonials, and contact options.
+- Centralised `siteCopy` configuration to keep contact links and personal details easy to update.
+- Responsive, mobile-first layout built with Tailwind CSS and modern typography.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🧱 Project Structure
+```
+app/
+  (site)/
+    components/       // shared UI like SectionHeading
+    sections/         // individual content sections used on the home page
+  layout.tsx          // metadata, global layout, and background treatment
+  page.tsx            // assembles sections for the homepage
+lib/
+  site-config.ts      // edit contact links + personal identifiers here
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
+1. Ensure you have **Node.js 18+** installed.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the live preview. Hot reloading is enabled, so edits refresh automatically.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production-style Preview
+When you want to inspect the optimized build locally:
+```bash
+npm run preview
+```
+This command runs `next build` and then serves the result with `next start`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✏️ Customisation Checklist
+1. **Update contact details** in [`lib/site-config.ts`](lib/site-config.ts) with your actual email, WhatsApp/phone number, LinkedIn profile, and calendar link.
+2. **Swap placeholder company names & stats** inside the relevant section files in `app/(site)/sections/`.
+3. **Adjust metadata** in [`app/layout.tsx`](app/layout.tsx) for real URLs/OG images.
+4. **Add real testimonials or case studies** when available.
 
-## Learn More
+## 🌐 Deploying on GitHub Pages
+1. Build the static export (the `GITHUB_PAGES` flag ensures assets resolve under `/kiran_portfolio`):
+   ```bash
+   GITHUB_PAGES=true npm run build
+   ```
+   > On Windows PowerShell, run `$env:GITHUB_PAGES="true"; npm run build` instead.
 
-To learn more about Next.js, take a look at the following resources:
+   The generated files will be placed in the `out/` directory.
+2. Publish the contents of `out/` to a `gh-pages` branch. One option is to run:
+   ```bash
+   npx gh-pages -d out
+   ```
+   (The first invocation downloads the `gh-pages` CLI if it is not already installed.)
+3. In your repository settings, enable GitHub Pages and choose the `gh-pages` branch (with the `/` root) as the source.
+4. After GitHub finishes deploying, your portfolio will be available at `https://<username>.github.io/<repository>/`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+_Vercel_ remains the most seamless option for previews and custom domains, but the above steps keep everything within GitHub if you prefer.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ✅ Quality Checks
+- `npm run lint`
+- Manual review across mobile, tablet, and desktop breakpoints.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to extend the component library or integrate a lightweight CMS if you need frequent copy updates.
