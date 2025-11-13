@@ -2,12 +2,24 @@ import Link from "next/link";
 import { siteCopy } from "@/lib/site-config";
 
 export function HeroSection() {
+  const availabilityColors: Record<string, string> = {
+    available: "border-green-500/30 bg-green-500/10 text-green-600 dark:text-green-400",
+    limited: "border-yellow-500/30 bg-yellow-500/10 text-yellow-600 dark:text-yellow-400",
+    unavailable: "border-red-500/30 bg-red-500/10 text-red-600 dark:text-red-400",
+  };
+
   return (
     <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-background via-background to-primary/5 px-6 py-16 shadow-sm sm:px-10 sm:py-24">
       <div className="relative mx-auto flex max-w-5xl flex-col items-center text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1 text-sm font-medium text-primary">
-          Unity & Gameplay Engineering Consultant
-        </span>
+        <div className="flex flex-col items-center gap-2 sm:flex-row">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1 text-sm font-medium text-primary">
+            Unity & Gameplay Engineering Consultant
+          </span>
+          <span className={`inline-flex items-center gap-2 rounded-full border px-4 py-1 text-xs font-medium ${availabilityColors[siteCopy.availability.status]}`}>
+            <span className="h-2 w-2 rounded-full bg-current animate-pulse" />
+            {siteCopy.availability.message}
+          </span>
+        </div>
         <h1 className="mt-6 text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl">
           Ship confident, high-performance Unity experiences with a partner who has
           seen it all.
