@@ -14,25 +14,50 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Kiran | Unity Performance Consultant",
+  title: "Kiran Javvaji | Unity & Gameplay Engineering Consultant",
   description:
-    "Consulting portfolio for Kiran, a Unity specialist helping game studios ship performant titles through audits, optimisation, and team enablement.",
+    "Expert Unity consultant with 8+ years shipping AAA console, mobile, and VR titles. Specializing in performance optimization, gameplay systems architecture, and team enablement. Free project audits available.",
+  keywords: [
+    "Unity Consultant",
+    "Unity Performance Optimization",
+    "Gameplay Engineering",
+    "Unity Developer",
+    "Game Development Consultant",
+    "VR Development",
+    "Console Game Development",
+    "Mobile Game Development",
+    "Unity Expert",
+    "Performance Profiling",
+  ],
+  authors: [{ name: "Kiran Javvaji" }],
+  creator: "Kiran Javvaji",
   openGraph: {
-    title: "Kiran — Unity Performance Consultant",
+    title: "Kiran Javvaji — Unity & Gameplay Engineering Consultant",
     description:
-      "Game engineering partner for studios that need senior-level Unity support, performance audits, and gameplay architecture.",
-    url: "https://kiran-portfolio.example.com",
-    siteName: "Kiran Consulting",
-    locale: "en_GB",
+      "Expert Unity consultant helping game studios ship high-performance titles across console, mobile, and VR. 8+ years experience, 12 studios partnered, 3x average performance uplift.",
+    url: "https://javvajikiran167.github.io/kiran_portfolio",
+    siteName: "Kiran Javvaji - Unity Consultant",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kiran — Unity Performance Consultant",
+    title: "Kiran Javvaji — Unity & Gameplay Engineering Consultant",
     description:
-      "Game engineering partner for studios that need senior-level Unity support, performance audits, and gameplay architecture.",
+      "Expert Unity consultant helping game studios ship high-performance titles across console, mobile, and VR. 8+ years experience, 12 studios partnered.",
   },
-  metadataBase: new URL("https://kiran-portfolio.example.com"),
+  metadataBase: new URL("https://javvajikiran167.github.io/kiran_portfolio"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
